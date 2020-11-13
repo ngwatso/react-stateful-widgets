@@ -45,16 +45,16 @@ export default function Input() {
     // Log out the synthetic event object 'evt' and see for yourself.
     const { value } = evt.target;
     setInputValue(value);
-    return { value };
     /* STEP 4 */
   };
   const reset = () => {
     /* STEP 5 */
     setInputValue("");
   };
+
   // console.log(changeInput);
   const inputLength = inputValue.length;
-  const upperCase = inputValue
+  const upperCase = inputValue.toUpperCase();
   
   const style = {
     fontSize: "1.5em",
@@ -69,7 +69,7 @@ export default function Input() {
         {upperCase}
       </div>
       <div>
-        <input id="input" type="text" onChange={changeInput} /> {}
+        <input id="input" type="text" onChange={changeInput} value={inputValue} /> 
         <button id="resetInput" onClick={reset}>
           Reset
         </button>
